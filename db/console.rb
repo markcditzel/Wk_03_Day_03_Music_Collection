@@ -2,7 +2,9 @@ require("pry")
 require_relative("../models/album")
 require_relative("../models/artist")
 
-#Artist.delete_all()
+
+Album.delete_all() # NB need to delete albums before deleting artists
+Artist.delete_all()
 
 #FOR TEST CONDITONS - DELETE ALL ARTISTS IN TABLE
 #Artist.delete_all()
@@ -24,6 +26,10 @@ artist3.save()
 artist3.name = 'The Pavement'
 artist3.update()
 
-p album1 = Album.new({'artist_id' => artist2.id, 'title' => 'Sago Mago', 'genre' => 'alt folk!', })
+# p album1 = Album.new({'artist_id' => artist2.id, 'title' => 'Sago Mago', 'genre' => 'alt folk!', })
+
+album1 = Album.new({'artist_id' => artist2.id, 'title' => 'Sago Mago', 'genre' => 'alt folk!', })
+
+album1.save
 
 #album1.save
