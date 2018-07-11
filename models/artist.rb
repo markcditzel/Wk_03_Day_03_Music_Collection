@@ -4,7 +4,7 @@ class Artist
 
 #TODO check what attrs need to be set
 
-attr_reader :name, :id
+attr_reader :name, :id # id needed to allow creation of album object
 
 attr_writer :name, :id
 
@@ -12,6 +12,9 @@ attr_writer :name, :id
     @id = options['id'].to_i if options['id'] # this will extract 'id' from the provided hash only if an id is present - thereby avoiding a nil assignment
     @name = options['name']
   end
+
+
+
 
   def save() # need to write to id to receive the returned id????
     sql = 'INSERT INTO artists (name) VALUES ($1)

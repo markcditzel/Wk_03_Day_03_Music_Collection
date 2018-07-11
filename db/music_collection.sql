@@ -7,8 +7,9 @@ name VARCHAR(255)
 );
 
 CREATE TABLE albums (-- MANY: create the many/child table second
-id SERIAL4 PRIMARY KEY,
+artist_id INT4 REFERENCES artists(id),
 title VARCHAR(255),
 genre VARCHAR(255),
-artist_id INT4 REFERENCES artists(id) -- THIS ACTS AS THE FOREIGN KEY; NB - match SERIAL4 and INT4 digits; reference the other table name and the key of its primary key
+id SERIAL4 PRIMARY KEY
+ -- THIS ACTS AS THE FOREIGN KEY; match SERIAL4 and INT4 digits; reference the other table name and the key of its primary key
 );
