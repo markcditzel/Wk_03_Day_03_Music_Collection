@@ -2,6 +2,8 @@ require("pry")
 require_relative("../models/album")
 require_relative("../models/artist")
 
+Artist.delete_all()
+
 #FOR TEST CONDITONS - DELETE ALL ARTISTS IN TABLE
 #Artist.delete_all()
 
