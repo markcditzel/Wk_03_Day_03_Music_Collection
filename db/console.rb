@@ -5,7 +5,16 @@ require_relative("../models/artist")
 #FOR TEST CONDITONS - DELETE ALL ARTISTS IN TABLE
 #Artist.delete_all()
 
-p artist1 = Artist.new({'name' => 'Prince'})
-p artist2 = Artist.new({'name' => 'CAN'})
+#Print to check that they are created in terminal view
+# p artist1 = Artist.new({'name' => 'Prince'})
+# p artist2 = Artist.new({'name' => 'CAN'})
+
+artist1 = Artist.new({'name' => 'Prince'})
+artist2 = Artist.new({'name' => 'CAN'})
+artist3 = Artist.new({'name' => 'Pavement'})
 
 artist1.save()
+artist2.save()
+artist3.save()
+
+artist3.delete()
