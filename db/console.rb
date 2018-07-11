@@ -32,9 +32,16 @@ album1 = Album.new({'artist_id' => artist2.id, 'title' => 'Sago Mago', 'genre' =
 
 album2 = Album.new({'artist_id' => artist3.id, 'title' => 'Crooked Rain', 'genre' => 'more alt folk!', })
 
+album3 = Album.new({'artist_id' => artist3.id, 'title' => 'Carrot Rope', 'genre' => 'more alt folk!', })
+
 album1.save
 album2.save
+album3.save
+
+p album3.artist
 
 #album1.delete
 
-p Album.list_all()
+#p Album.list_all()
+
+#p Artist.list_all()

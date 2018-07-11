@@ -42,6 +42,11 @@ attr_writer :name, :id
     SqlRunner.run(sql,values) # don't need to return anything
   end
 
+  def self.list_all ()
+    sql = 'SELECT * FROM artists'
+    artists = SqlRunner.run(sql)
+    return artists.map {|artist| Artist.new(artist)}
+  end
 
 
 end
