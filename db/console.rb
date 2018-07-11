@@ -19,4 +19,7 @@ artist1.save()
 artist2.save()
 artist3.save()
 
-artist3.delete()
+#artist3.delete()
+
+artist3.name = 'The Pavement'
+artist3.update()

@@ -4,12 +4,16 @@ class Artist
 
 #TODO check what attrs need to be set
 
+attr_reader :name, :id
+
+attr_writer :name, :id
+
   def initialize(options)
     @id = options['id'].to_i if options['id'] # this will extract 'id' from the provided hash only if an id is present - thereby avoiding a nil assignment
     @name = options['name']
   end
 
-  def save()
+  def save() # need to write to id to receive the returned id????
     sql = 'INSERT INTO artists (name) VALUES ($1)
             RETURNING id'
     values = [@name]
@@ -20,8 +24,21 @@ class Artist
   def delete()
     sql = 'DELETE FROM artists WHERE id = $1'
     values = [@id]
-    SqlRunner.run(sql,values)
+    SqlRunner.run(sql,values) # dont need to return anything
   end
+
+  def self.delete_all() # this a class method that deletes all entries in table; self identifies equates to the class it is defined in
+    sql = 'DELETE FROM artists'
+    SqlRunner.run(sql)
+  end
+
+  def update() # needs to write to name for update
+    sql = 'UPDATE artists SET name = $1
+    WHERE id = $2'
+    values = [@name, @id] # these are the instance var associated with the object onto which the update method is called; we include both for max versatility
+    SqlRunner.run(sql,values) # don't need to return anything
+  end
+
 
 
 end
