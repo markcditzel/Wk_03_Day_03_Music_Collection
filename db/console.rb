@@ -35,6 +35,6 @@ album2 = Album.new({'artist_id' => artist3.id, 'title' => 'Crooked Rain', 'genre
 album1.save
 album2.save
 
-album1.delete
+#album1.delete
 
-#album1.save
+p Album.list_all()

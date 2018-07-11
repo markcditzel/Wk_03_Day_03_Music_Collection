@@ -34,6 +34,12 @@ class Album
     SqlRunner.run(sql,values)
   end
 
+  def self.list_all ()
+    sql = 'SELECT * FROM albums'
+    albums = SqlRunner.run(sql)#no values needed
+    return albums.map {|album| Album.new(album)}
+  end
+
 
 
 end
