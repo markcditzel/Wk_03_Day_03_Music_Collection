@@ -4,6 +4,7 @@ class Artist
 
 #TODO check what attrs need to be set
 
+
 attr_reader :name, :id # id needed to allow creation of album object
 
 attr_writer :name, :id
@@ -46,6 +47,13 @@ attr_writer :name, :id
     sql = 'SELECT * FROM artists'
     artists = SqlRunner.run(sql)
     return artists.map {|artist| Artist.new(artist)}
+  end
+
+  def album() # this will return all albums assocaited with the artist object; it could/should return muliple albums; so will need to map the array of hashes
+    sql = 'SELECT * FROM albums WHERE artist_id = $1'
+    values = [@id]
+    albums = SqlRunner.run(sql,values)
+    return albums.map {|album| Artist.new(album)}
   end
 
 

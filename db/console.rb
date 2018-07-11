@@ -23,7 +23,7 @@ artist3.save()
 
 #artist3.delete()
 
-artist3.name = 'The Pavement'
+#artist3.name = 'The Pavement'
 #artist3.update()
 
 # p album1 = Album.new({'artist_id' => artist2.id, 'title' => 'Sago Mago', 'genre' => 'alt folk!', })
@@ -38,7 +38,9 @@ album1.save
 album2.save
 album3.save
 
-p album3.artist
+#album3.artist
+
+artist3.album
 
 #album1.delete
 
